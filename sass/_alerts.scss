@@ -1,0 +1,57 @@
+/******************************************************************************
+  Alerts
+*******************************************************************************/
+.alert {
+  @include border-r(2px);
+  color: rgba(#fff, .85);
+  font-size: .88em;
+  line-height: 1.29;
+  margin-bottom: 10px;
+  padding: 18px 25px 18px 21px;
+  position: relative;
+  
+  .close {
+    color: #fff;
+    font-size: 20px;
+    line-height: 16px;
+    opacity: .5;
+    position: absolute;
+    right: 8px;
+    top: 6px;
+    @include transition(opacity);
+    
+    &:hover {
+      opacity: .75;
+    }
+    .fa {
+      font-size: 16px;
+      vertical-align: top;
+    }
+  }
+  .icon {
+    color: #fff;
+    color: rgba(#fff,.75);
+    float: left;
+    font-size: 2em;
+    line-height: 1;
+    margin: 0 23px 0 0;
+    min-width: 24px;
+    text-align: center;
+    vertical-align: top;
+  }
+  .content {
+    overflow: hidden;
+  }
+  &.alert-default {
+    background-color: $text-color;
+    border-color: $text-color;
+  }
+  &.alert-primary {
+    background-color: $primary;
+    border-color: $primary;
+  }
+  &.alert-black {
+    background-color: #000;
+    border-color: #000;
+  }
+}

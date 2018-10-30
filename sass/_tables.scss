@@ -1,0 +1,57 @@
+/******************************************************************************
+  Tables
+*******************************************************************************/
+.table {
+  > thead > tr > th,
+  > thead > tr > td,
+  > tbody > tr > th,
+  > tbody > tr > td,
+  > tfoot > tr > th,
+  > tfoot > tr > td {
+    line-height: 1.82;
+  }
+  > thead > tr > th {
+    border-bottom-width: 1px;
+    color: $danger;
+    font-size: 1.25em;
+    font-family: $miso;
+    font-weight: 500;
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+  &.table-center,
+  &.table-center td,
+  &.table-center th {
+    text-align: center;
+  }
+  &.table-hover > tbody > tr > td,
+  &.table-hover > tbody > tr > th,
+  &.table-hover > tbody > tr:hover > td,
+  &.table-hover > tbody > tr:hover > th {
+    @include transition(background-color);
+  }
+  &.table-bordered > thead > tr > th,
+  &.table-bordered > thead > tr > td,
+  &.table-hover > tbody > tr:hover > td,
+  &.table-hover > tbody > tr:hover > th,
+  > thead > tr > td.active,
+  > thead > tr > th.active,
+  > thead > tr.active > td,
+  > thead > tr.active > th,
+  > tbody > tr > td.active,
+  > tbody > tr > th.active,
+  > tbody > tr.active > td,
+  > tbody > tr.active > th,
+  > tfoot > tr > td.active,
+  > tfoot > tr > th.active,
+  > tfoot > tr.active > td,
+  > tfoot > tr.active > th {
+    background: rgba(#000, .01);
+  }
+  .success,
+  .info,
+  .warning,
+  .danger {
+    color: #fff;
+  }
+}

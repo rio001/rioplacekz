@@ -1,0 +1,888 @@
+/******************************************************************************
+  Carousels
+*******************************************************************************/
+.carousel,
+.owl-carousel {
+  width: auto;
+  
+  .grid-post {
+    margin-bottom: 0;
+  }
+  .owl-item {
+    > .col-xs-1,
+    >.col-sm-1,
+    > .col-md-1,
+    > .col-lg-1,
+    > .col-xs-2,
+    > .col-sm-2,
+    > .col-md-2,
+    > .col-lg-2,
+    > .col-xs-3,
+    > .col-sm-3,
+    > .col-md-3,
+    > .col-lg-3,
+    > .col-xs-4,
+    > .col-sm-4,
+    > .col-md-4,
+    > .col-lg-4,
+    > .col-xs-5,
+    > .col-sm-5,
+    > .col-md-5,
+    > .col-lg-5,
+    > .col-xs-6,
+    > .col-sm-6,
+    > .col-md-6,
+    > .col-lg-6,
+    > .col-xs-7,
+    > .col-sm-7,
+    > .col-md-7,
+    > .col-lg-7,
+    > .col-xs-8,
+    > .col-sm-8,
+    > .col-md-8,
+    > .col-lg-8,
+    > .col-xs-9,
+    > .col-sm-9,
+    > .col-md-9,
+    > .col-lg-9,
+    > .col-xs-10,
+    > .col-sm-10,
+    > .col-md-10,
+    > .col-lg-10,
+    > .col-xs-11,
+    > .col-sm-11,
+    > .col-md-11,
+    > .col-lg-11,
+    > .col-xs-12,
+    > .col-sm-12,
+    > .col-md-12,
+    > .col-lg-12 {
+      width: 100%;
+    }
+  }
+  .owl-prev,
+  .owl-next {
+    color: #ccc;
+    color: rgba(#000,.1);
+    border: 0 none !important;
+    font-size: 0;
+    height: 20px;
+    left: -20px;
+    line-height: 20px;
+    margin-top: -10px;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    @include transition(color);
+    vertical-align: top;
+    width: 20px;
+    
+    &:before {
+      content: "\f104";
+      display: block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: 26px;
+      line-height: 20px;
+      left: 11px;
+      position: absolute;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      @include transition(left);
+    }
+    &:after {
+      background: #ccc;
+      background: rgba(#000,.2);
+      content: "";
+      display: block;
+      height: 1px;
+      opacity: 0;
+      position: absolute;
+      right: 0;
+      top: 10px;
+      transition:
+        opacity 0.2s ease-in-out,
+        width 0.2s ease-in-out;
+      width: 10px;
+    }
+    
+    body:not(.touch-device) & {
+      &:hover {
+        color: rgba(#000,.2);
+        
+        &:before {
+          left: 0;
+        }
+        &:after {
+          opacity: 1;
+          width: 16px;
+        }
+      }
+    }
+  }
+  .owl-next {
+    left: auto;
+    right: -20px;
+    
+    &:before {
+      content: "\f105";
+      left: auto;
+      right: 11px;
+      @include transition(right);
+    }
+    &:after {
+      left: 0;
+      right: auto;
+    }
+    body:not(.touch-device) & {
+      &:hover {
+        &:before {
+          left: auto;
+          right: 0;
+        }
+      }
+    }
+  }
+  .owl-pagination {
+    height: 13px;
+    margin: 51px 0 0;
+    padding: 0 15px;
+    text-align: center;
+    vertical-align: top;
+    width: 100%;
+    
+    .owl-page {
+      display: inline-block;
+      height: 13px;
+      margin: 0 16px;
+      padding: 2px;
+      position: relative;
+      vertical-align: top;
+      width: 13px;
+      
+      &:before {
+        background: rgba(0,0,0,.17);
+        content: "";
+        display: block;
+        height: 1px;
+        left: 50%;
+        margin: -.5px 0 0 4px;
+        pointer-events: none;
+        position: absolute;
+        top: 50%;
+        width: 37px;
+      }
+      span {
+        background: #ccc;
+        background: rgba(#000,.1);
+        @include border-r(500px);
+        display: block;
+        height: 100%;
+        @include transition(background);
+        width: 100%;
+      }
+      &:hover {
+        span {
+          background: rgba(#000,.2);
+        }
+      }
+      &.active {
+        padding: 0;
+        
+        span {
+          background: rgba(#000,.2);
+        }
+      }
+      &:last-of-type {
+        &:before {
+          display: none !important;
+        }
+      }
+    }
+    
+    & + .owl-buttons {
+      .owl-prev,
+      .owl-next {
+        margin-top: -42px;
+      }
+    }
+    .owl-prev,
+    .owl-next {
+      display: inline-block;
+      left: 0;
+      margin: -4px 17px 0;
+      position: relative;
+      top: 0;
+    }
+  }
+  // Carousels Color
+  body &.carousel-white {
+    .owl-prev,
+    .owl-next {
+      color: #fff;
+      color: rgba(#fff,.65);
+      
+      &:hover {
+        color: #fff;
+      }
+      &:after {
+        background: #fff;
+        background: rgba(#fff,.65);
+      }
+    }
+    .owl-page {
+      &:before {
+        background: rgba(#fff,.17);
+      }
+      span {
+        background: #fff;
+        background: rgba(#fff,.5);
+      }
+      &:hover {
+        span {
+          background: rgba(#fff,.8);
+        }
+      }
+      &.active {
+        span {
+          background: rgba(#fff,.8);
+        }
+      }
+    }
+  }
+  body &.carousel-black {
+    .owl-prev,
+    .owl-next {
+      color: #000;
+      color: rgba(#000,.65);
+      
+      &:hover {
+        color: #000;
+      }
+      &:after {
+        background: #000;
+        background: rgba(#000,.65);
+      }
+    }
+    .owl-page {
+      &:before {
+        background: rgba(#000,.17);
+      }
+      span {
+        background: #000;
+        background: rgba(#000,.5);
+      }
+      &:hover {
+        span {
+          background: rgba(#000,.8);
+        }
+      }
+      &.active {
+        span {
+          background: rgba(#000,.8);
+        }
+      }
+    }
+  }
+  body &.carousel-primary {
+    .owl-prev,
+    .owl-next {
+      color: $primary;
+      color: rgba($primary,.65);
+      
+      &:hover {
+        color: $primary;
+      }
+      &:after {
+        background: $primary;
+        background: rgba($primary,.65);
+      }
+    }
+    .owl-page {
+      &:before {
+        background: rgba($primary,.17);
+      }
+      span {
+        background: $primary;
+        background: rgba($primary,.5);
+      }
+      &:hover {
+        span {
+          background: rgba($primary,.8);
+        }
+      }
+      &.active {
+        span {
+          background: rgba($primary,.8);
+        }
+      }
+    }
+  }
+  body &.carousel-success {
+    .owl-prev,
+    .owl-next {
+      color: $success;
+      color: rgba($success,.65);
+      
+      &:hover {
+        color: $success;
+      }
+      &:after {
+        background: $success;
+        background: rgba($success,.65);
+      }
+    }
+    .owl-page {
+      &:before {
+        background: rgba($success,.17);
+      }
+      span {
+        background: $success;
+        background: rgba($success,.5);
+      }
+      &:hover {
+        span {
+          background: rgba($success,.8);
+        }
+      }
+      &.active {
+        span {
+          background: rgba($success,.8);
+        }
+      }
+    }
+  }
+  body &.carousel-info {
+    .owl-prev,
+    .owl-next {
+      color: $info;
+      color: rgba($info,.65);
+      
+      &:hover {
+        color: $info;
+      }
+      &:after {
+        background: $info;
+        background: rgba($info,.65);
+      }
+    }
+    .owl-page {
+      &:before {
+        background: rgba($info,.17);
+      }
+      span {
+        background: $info;
+        background: rgba($info,.5);
+      }
+      &:hover {
+        span {
+          background: rgba($info,.8);
+        }
+      }
+      &.active {
+        span {
+          background: rgba($info,.8);
+        }
+      }
+    }
+  }
+  body &.carousel-warning {
+    .owl-prev,
+    .owl-next {
+      color: $warning;
+      color: rgba($warning,.65);
+      
+      &:hover {
+        color: $warning;
+      }
+      &:after {
+        background: $warning;
+        background: rgba($warning,.65);
+      }
+    }
+    .owl-page {
+      &:before {
+        background: rgba($warning,.17);
+      }
+      span {
+        background: $warning;
+        background: rgba($warning,.5);
+      }
+      &:hover {
+        span {
+          background: rgba($warning,.8);
+        }
+      }
+      &.active {
+        span {
+          background: rgba($warning,.8);
+        }
+      }
+    }
+  }
+  body &.carousel-danger {
+    .owl-prev,
+    .owl-next {
+      color: $danger;
+      color: rgba($danger,.65);
+      
+      &:hover {
+        color: $danger;
+      }
+      &:after {
+        background: $danger;
+        background: rgba($danger,.65);
+      }
+    }
+    .owl-page {
+      &:before {
+        background: rgba($danger,.17);
+      }
+      span {
+        background: $danger;
+        background: rgba($danger,.5);
+      }
+      &:hover {
+        span {
+          background: rgba($danger,.8);
+        }
+      }
+      &.active {
+        span {
+          background: rgba($danger,.8);
+        }
+      }
+    }
+  }
+  &.bottom-navigation {
+    .owl-buttons {
+      display: none !important;
+    }
+    .owl-controls {
+      .owl-pagination {
+        .owl-prev {
+          margin-left: 0;
+        }
+        .owl-next {
+          margin-right: 0;
+        }
+        .owl-page {
+          @media (max-width: $media-xs) {
+            display: none !important;
+          }
+        }
+      }
+    }
+  }
+}
+.navigation {
+  .prev,
+  .next {
+    border: 0 none;
+    color: #ccc;
+    color: rgba(#000,.1);
+    display: block;
+    font-size: 26px;
+    height: 20px;
+    line-height: 20px;
+    margin: -10px 0 0;
+    position: absolute;
+    top: 50%;
+    @include transition(color);
+    width: 20px;
+    
+    &:after {
+      background: #ccc;
+      background: rgba(#000,.2);
+      content: "";
+      display: block;
+      height: 1px;
+      opacity: 0;
+      position: absolute;
+      right: 0;
+      top: 10px;
+      transition:
+        opacity 0.2s ease-in-out,
+        width 0.2s ease-in-out;
+      width: 10px;
+    }
+    .fa {
+      display: block;
+      left: 11px;
+      line-height: 20px;
+      position: absolute;
+      @include transition(left);
+      vertical-align: top;
+      width: 9px;
+    }
+    body:not(.touch-device) & {
+      &:hover {
+        color: rgba(#000,.2);
+        
+        &:after {
+          opacity: 1;
+          width: 16px;
+        }
+        .fa {
+          left: 0;
+        }
+      }
+    }
+  }
+  .next {
+    &:after {
+      left: 0;
+      right: auto;
+    }
+    .fa {
+      left: auto;
+      right: 11px;
+      @include transition(right);
+    }
+    body:not(.touch-device) & {
+      &:hover {
+        .fa {
+          left: auto;
+          right: 0;
+        }
+      }
+    }
+  }
+  .pager {
+    a {
+      border: 0 none;
+      display: inline-block;
+      height: 11px;
+      margin: 0 7px;
+      padding: 2px;
+      vertical-align: top;
+      width: 11px;
+      
+      span {
+        background: #ccc;
+        background: rgba(#000,.1);
+        @include border-r(500px);
+        display: block;
+        height: 100%;
+        text-indent: -9999px;
+        @include transition(background);
+        width: 100%;
+      }
+      &:hover {
+        span {
+          background: rgba(#000,.2);
+        }
+      }
+      &.selected {
+        padding: 0;
+        
+        span {
+          background: rgba(#000,.2);
+        }
+      }
+    }
+  }
+  body .carousel-white & {
+    .prev,
+    .next {
+      color: #fff;
+      
+      &:after {
+        background: #fff;
+        background: rgba(#fff,.8);
+      }
+      &:hover {
+        color: rgba(#fff,.8);
+      }
+    }
+    .pager {
+      a {
+        span {
+          background: #fff;
+          background: rgba(#fff,.5);
+        }
+        &:hover,
+        &.selected {
+          span {
+            background: rgba(#fff,.8);
+          }
+        }
+      }
+    }
+  }
+  body .carousel-primary & {
+    .prev,
+    .next {
+      color: $primary;
+      
+      &:after {
+        background: $primary;
+        background: rgba($primary,.8);
+      }
+      &:hover {
+        color: rgba($primary,.8);
+      }
+    }
+    .pager {
+      a {
+        span {
+          background: $primary;
+          background: rgba($primary,.5);
+        }
+        &:hover,
+        &.selected {
+          span {
+            background: rgba($primary,.8);
+          }
+        }
+      }
+    }
+  }
+  body .carousel-success & {
+    .prev,
+    .next {
+      color: $success;
+      
+      &:after {
+        background: $success;
+        background: rgba($success,.8);
+      }
+      &:hover {
+        color: rgba($success,.8);
+      }
+    }
+    .pager {
+      a {
+        span {
+          background: $success;
+          background: rgba($success,.5);
+        }
+        &:hover,
+        &.selected {
+          span {
+            background: rgba($success,.8);
+          }
+        }
+      }
+    }
+  }
+  body .carousel-info & {
+    .prev,
+    .next {
+      color: $info;
+      
+      &:after {
+        background: $info;
+        background: rgba($info,.8);
+      }
+      &:hover {
+        color: rgba($info,.8);
+      }
+    }
+    .pager {
+      a {
+        span {
+          background: $info;
+          background: rgba($info,.5);
+        }
+        &:hover,
+        &.selected {
+          span {
+            background: rgba($info,.8);
+          }
+        }
+      }
+    }
+  }
+  body .carousel-warning & {
+    .prev,
+    .next {
+      color: $warning;
+      
+      &:after {
+        background: $warning;
+        background: rgba($warning,.8);
+      }
+      &:hover {
+        color: rgba($warning,.8);
+      }
+    }
+    .pager {
+      a {
+        span {
+          background: $warning;
+          background: rgba($warning,.5);
+        }
+        &:hover,
+        &.selected {
+          span {
+            background: rgba($warning,.8);
+          }
+        }
+      }
+    }
+  }
+  body .carousel-danger & {
+    .prev,
+    .next {
+      color: $danger;
+      
+      &:after {
+        background: $danger;
+        background: rgba($danger,.8);
+      }
+      &:hover {
+        color: rgba($danger,.8);
+      }
+    }
+    .pager {
+      a {
+        span {
+          background: $danger;
+          background: rgba($danger,.5);
+        }
+        &:hover,
+        &.selected {
+          span {
+            background: rgba($danger,.8);
+          }
+        }
+      }
+    }
+  }
+}
+.carousel {
+  width: 10000px;
+  
+  &.owl-carousel {
+    width: auto;
+  }
+  > .col-xs-1,
+  > .col-xs-2,
+  > .col-xs-3,
+  > .col-xs-4,
+  > .col-xs-5,
+  > .col-xs-6,
+  > .col-xs-7,
+  > .col-xs-8,
+  > .col-xs-9,
+  > .col-xs-10,
+  > .col-xs-11,
+  > .col-xs-12 {
+    max-width: 750px;
+  }
+  @media (min-width: $media-xs + 1) {
+    > .col-sm-1 {
+      max-width: 62px;
+    }
+    > .col-sm-2 {
+      max-width: 125px;
+    }
+    > .col-sm-3 {
+      max-width: 188px;
+    }
+    > .col-sm-4 {
+      max-width: 250px;
+    }
+    > .col-sm-5 {
+      max-width: 313px;
+    }
+    > .col-sm-6 {
+      max-width: 375px;
+    }
+    > .col-sm-7 {
+      max-width: 437px;
+    }
+    > .col-sm-8 {
+      max-width: 500px;
+    }
+    > .col-sm-9 {
+      max-width: 563px;
+    }
+    > .col-sm-10 {
+      max-width: 625px;
+    }
+    > .col-sm-11 {
+      max-width: 688px;
+    }
+    > .col-sm-12 {
+      max-width: 750px;
+    }
+  }
+  @media (min-width: $media-sm + 1) {
+    > .col-md-1 {
+      max-width: 81px;
+    }
+    > .col-md-2 {
+      max-width: 162px;
+    }
+    > .col-md-3 {
+      max-width: 243px;
+    }
+    > .col-md-4 {
+      max-width: 323px;
+    }
+    > .col-md-5 {
+      max-width: 404px;
+    }
+    > .col-md-6 {
+      max-width: 485px;
+    }
+    > .col-md-7 {
+      max-width: 566px;
+    }
+    > .col-md-8 {
+      max-width: 647px;
+    }
+    > .col-md-9 {
+      max-width: 728px;
+    }
+    > .col-md-10 {
+      max-width: 808px;
+    }
+    > .col-md-11 {
+      max-width: 889px;
+    }
+    > .col-md-12 {
+      max-width: 970px;
+    }
+  }
+  @media (min-width: $media-md + 1) {
+    > .col-md-1 {
+      max-width: 100px;
+    }
+    > .col-md-2 {
+      max-width: 200px;
+    }
+    > .col-md-3 {
+      max-width: 300px;
+    }
+    > .col-md-4 {
+      max-width: 400px;
+    }
+    > .col-md-5 {
+      max-width: 500px;
+    }
+    > .col-md-6 {
+      max-width: 600px;
+    }
+    > .col-md-7 {
+      max-width: 700px;
+    }
+    > .col-md-8 {
+      max-width: 800px;
+    }
+    > .col-md-9 {
+      max-width: 900px;
+    }
+    > .col-md-10 {
+      max-width: 1000px;
+    }
+    > .col-md-11 {
+      max-width: 1100px;
+    }
+    > .col-md-12 {
+      max-width: 1200px;
+    }
+  }
+}

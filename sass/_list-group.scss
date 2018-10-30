@@ -1,0 +1,67 @@
+/******************************************************************************
+  List Group
+*******************************************************************************/
+.list-group-item {
+  border-color: #ddd;
+  @include transition(background);
+  
+  &:hover,
+  &:focus {
+    border-width: 1px;
+    border-color: #ddd;
+  }
+  
+  > .badge {
+    margin-top: 4.5px;
+  }
+}
+/* List Group styling */
+.list-group-item-success {
+  $test: list-group-item-success;
+  
+  border-color: $success;
+  color: #fff;
+  
+  &:hover,
+  &:focus {
+    @extend .list-group-item-success;
+  }
+}
+.list-group-item-info {
+  border-color: $info;
+  color: #fff;
+  
+  &:hover,
+  &:focus {
+    @extend .list-group-item-info;
+  }
+}
+.list-group-item-warning {
+  border-color: $warning;
+  color: #fff;
+  
+  &:hover,
+  &:focus {
+    @extend .list-group-item-warning;
+  }
+}
+.list-group-item-danger {
+  border-color: $danger;
+  color: #fff;
+  
+  &:hover,
+  &:focus {
+    @extend .list-group-item-danger;
+  }
+  
+}
+a.list-group-item {
+  color: $text-color;
+  font-size: 1em;
+}
+a.list-group-item-success,
+a.list-group-item-info,
+a.list-group-item-warning,
+a.list-group-item-danger {
+  color: #fff;
+}

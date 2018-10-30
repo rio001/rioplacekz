@@ -1,0 +1,154 @@
+/******************************************************************************
+  Footer
+*******************************************************************************/
+.site-footer {
+  background: $text-color;
+  color: #768088;
+  font-size: .75em;
+  padding: 24px 0;
+  text-align: center;
+  width: 100%;
+  
+  @media (max-width: $media-xs) {
+    .col-sm-4 + .col-sm-4 {
+      margin-top: 15px;
+    }
+  }
+  
+  .left-align {
+    text-align: left;
+    @media (max-width: $media-xs) {
+      text-align: center;
+    }
+  }
+  .right-align {
+    text-align: right;
+    @media (max-width: $media-xs) {
+      text-align: center;
+    }
+  }
+  
+  .copyright {
+    font-style: italic;
+  }
+  .social {
+    a {
+      border: 0 none;
+      color: #768088;
+      font-size: .85em;
+      margin: 0 14px;
+      @include transition(color);
+      
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+  .scroll-to-top,
+  .scroll-to-top:visited {
+    border: 0 none;
+    color: #768088;
+    display: inline-block;
+    font-size: 1.9em;
+    height: 22px;
+    line-height: 22px;
+    vertical-align: top;
+    @include transition(color);
+    
+    .fa {
+      vertical-align: top;
+    }
+    
+    &:hover {
+      color: #fff;
+    }
+  }
+  &.footer-white {
+    background: #fff;
+    color: #000;
+    
+    .social {
+      a {
+        color: #000;
+        
+        &:hover {
+          color: rgba(#000,.8);
+        }
+      }
+    }
+    .scroll-to-top,
+    .scroll-to-top:visited {
+      color: #000;
+
+      &:hover {
+        color: rgba(#000,.8);
+      }
+    }
+  }
+  &.footer-gray {
+    background: #d5d5d5;
+    color: #939393;
+    
+    .social {
+      a {
+        color: #939393;
+        
+        &:hover {
+          color: rgba(#939393,.8);
+        }
+      }
+    }
+    .scroll-to-top,
+    .scroll-to-top:visited {
+      color: #939393;
+
+      &:hover {
+        color: rgba(#939393,.8);
+      }
+    }
+  }
+  &.footer-black {
+    background: #000;
+    color: #fff;
+    
+    .social {
+      a {
+        color: #fff;
+        
+        &:hover {
+          color: rgba(#fff,.8);
+        }
+      }
+    }
+    .scroll-to-top,
+    .scroll-to-top:visited {
+      color: #fff;
+
+      &:hover {
+        color: rgba(#fff,.8);
+      }
+    }
+  }
+  &.footer-brown {
+    background: #504942;
+    color: #fff7cc;
+    
+    .social {
+      a {
+        color: #fff7cc;
+        
+        &:hover {
+          color: rgba(#fff7cc,.8);
+        }
+      }
+    }
+    .scroll-to-top,
+    .scroll-to-top:visited {
+      color: #fff7cc;
+
+      &:hover {
+        color: rgba(#fff7cc,.8);
+      }
+    }
+  }
+}

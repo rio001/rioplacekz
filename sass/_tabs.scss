@@ -1,0 +1,116 @@
+/******************************************************************************
+  Tabs
+*******************************************************************************/
+.nav-tabs {
+  border-bottom: 0 none;
+  color: #768088;
+  font-size: 0.81em;
+  
+  > li {
+    > a {
+      color: rgba(#768088, .75);
+      font-size: 1em;
+       @include transition(color);
+      
+      &:hover,
+      &:focus {
+        background: none;
+        border-bottom-color: transparent;
+        color: #768088;
+      }
+    }
+    
+    &.active {
+      > a,
+      > a:hover,
+      > a:focus {
+        border-bottom-color: #fff;
+        color: #768088;
+      }
+    }
+    
+    &.open {
+      > a,
+      > a:hover,
+      > a:focus {
+        border-color: #dbe0e5;
+      }
+    }
+    &:last-child {
+      a {
+        margin-right: 0;
+      }
+    }
+  }
+  
+}
+.tab-content {
+  background: #fff;
+  border: 1px solid #dbe0e5;
+  @include border-r(3px);
+  padding: 18px 17px 14px;
+  
+  .tab-pane {
+    color: #768088;
+    font-size: 0.88em;
+    line-height: 1.64;
+    padding: 0;
+  }
+}
+.tabs-left {
+  > .nav-tabs {
+    border: 0 none;
+    float: left;
+    margin: 0 -1px 0 0;
+    
+    > li {
+      float: none;
+      margin: 0;
+      
+      > a {
+        border-color: transparent;
+        @include border-r(3px 0 0 3px);
+        margin: 0 0 2px;
+      }
+      &.active {
+        > a {
+          border-color: #dbe0e5;
+          border-right-color: transparent;
+        }
+      }
+    }
+  }
+  > .tab-content {
+    border-left: 1px solid #dbe0e5;
+    margin: 0;
+    overflow: auto;
+  }
+}
+.accordion-tab,
+.tabs-left .accordion-tab {
+  float: none;
+  
+  > li {
+    background-color: #fff;
+    border: 1px solid #dbe0e5;
+    @include border-r(3px);
+    float: none;
+    margin: 0 0 3px;
+    
+    > a {
+      border-color: transparent !important;
+      margin: 0;
+    }
+    > .tab-pane {
+      border-top: 1px solid #dbe0e5;
+      @include border-r(0 0 3px 3px);
+      display: none;
+      padding: 5px 17px;
+    }
+    &.active {
+      > a {
+        background: none;
+      }
+    }
+  }
+}

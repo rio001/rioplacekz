@@ -1,0 +1,32 @@
+/******************************************************************************
+  Pagination
+*******************************************************************************/
+.pagination {
+  margin: 80px 0 0;
+  @include border-r(0);
+  
+  > li {
+    > a,
+    > a:visited,
+    > span {
+      border: 0 none;
+      @include border-r(2px);
+      color: #fbfdfe;
+      font-size: .75em;
+      font-weight: bold;
+      min-width: 36px;
+      margin: 0 2px;
+      padding: 5px 12px;
+      text-align: center;
+      transition:
+        bottom 0.2s ease-in-out,
+        background 0.2s ease-in-out;
+        
+      .fa {
+        font-size: 1.2em;
+        line-height: .8;
+        vertical-align: middle;
+      }
+    }
+  }
+}

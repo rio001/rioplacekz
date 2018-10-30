@@ -1,0 +1,146 @@
+/******************************************************************************
+  Accordions
+*******************************************************************************/
+.panel-group {
+  .panel {
+    background: none;
+    border: 0 none;
+    box-shadow: none;
+    margin: 0 0 26px;
+
+    + .panel {
+      margin-top: 0;
+    }
+    .panel-heading {
+      background: none;
+      border: 0 none;
+      padding: 0;
+      color: #1eb3c5;
+      
+      .panel-title {
+        font-family: $lato;
+        overflow: hidden;
+        position: relative;
+        text-transform: none;
+        
+        a {
+          border: 0 none;
+          color: inherit;
+          @include transition(color);
+          padding-right: 21px;
+          
+          &:after {
+            color: #1eb3c5;
+            content: ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .";
+            display: inline-block;
+            font-size: .5em;
+            line-height: 40px;
+            margin: -10px 25px 0 5px;
+            pointer-events: none;
+            position: absolute;
+          }
+          
+          &:hover {
+            color: $danger;
+          }
+        }
+        .collapse-btn {
+          color: $danger;
+          float: right;
+          height: 20px;
+          margin: 1px 0;
+          padding: 0;
+          position: relative;
+          text-indent: -9999px;
+          width: 20px;
+          
+          &:before,
+          &:after {
+            background: $danger;
+            display: block;
+            content: "";
+            height: 100%;
+            left: 50%;
+            margin: 0 0 0 -1px;
+            position: absolute;
+            top: 0;
+            width: 2px;
+          }
+          &:after {
+            height: 2px;
+            left: 0;
+            margin: -1px 0 0;
+            top: 50%;
+            width: 100%;
+          }
+        }
+      }
+    }
+    .panel-body {
+      border: 0 none !important;
+      line-height: 1.375em;
+      padding: 26px 0 0;
+    }
+    &.active {
+      .panel-heading {
+        .panel-title {
+          a {
+            color: $danger;
+          }
+          .collapse-btn {
+            &:before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  &.second-style {
+    .panel {
+      .panel-heading {
+        color: #7d6d5e;
+        
+        .panel-title {
+          a:after {
+            color: inherit;
+          }
+        }
+      }
+    }
+  }
+  &.third-style {
+    .panel {
+      .panel-heading {
+        color: #b58664;
+        
+        .panel-title {
+          a {
+            &:hover {
+              color: #b58664;
+            }
+            &:after {
+              color: #fff;
+            }
+          }
+          .collapse-btn {
+            &:before,
+            &:after {
+              background: #b58664;
+            }
+          }
+        }
+      }
+      &.active {
+        .panel-heading {
+          .panel-title {
+            a {
+              color: #b58664;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+$miso:            'miso';
+$miso-l:          'misolight';
+$lato:            'Lato';
+
+$text-color:      #1e2d3a;
+$primary:         #375099;
+$success:         #179680;
+$info:            #20bdd0;
+$warning:         #d6973d;
+$danger:          #d73e4d;
+$main-bg:         #1e2d3a;
+
+$header-height: 70px;
+$header-bg: rgba(#fff, .9);
+
+$second-header-bg: transparent;
+
+$footer-height: 70px;
+
+$media-md: 1229px;
+$media-sm: 991px;
+$media-xs: 767px;
+
+@mixin transition($element){
+  transition: #{$element} .2s ease-in-out;
+}
+@mixin border-r($element){
+  border-radius: #{$element};
+}

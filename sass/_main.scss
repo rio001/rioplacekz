@@ -1,0 +1,127 @@
+/******************************************************************************
+  Main
+*******************************************************************************/
+.main {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  
+  .section {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-width: 0 !important;
+    border-color: rgba(0,0,0,.02);
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+    position: relative;
+    table-layout: fixed;
+    @media (max-width: $media-xs) {
+      overflow: visible;
+    }
+
+    &.background-image,
+    &.background-overlay {
+      .fp-tableCell {
+        background-color: inherit;
+      }
+    }
+    &.shadow .slide {
+      overflow: hidden;
+      
+      .fp-tableCell {
+        overflow: hidden;
+      }
+    }
+    &.fp-table.shadow:before,
+    &.shadow .slide .fp-tableCell:before {
+      border-top-width: 1500px;
+      border-top-style: solid;
+      border-top-color: inherit;
+      border-right: 1500px solid transparent;
+      content: "";
+      display: none;
+      height: 0;
+      left: 50%;
+      margin: 0 0 0 -1442px;
+      position: absolute;
+      top: 0;
+      width: 0;
+      backface-visibility: hidden;
+      
+      .loaded & {
+        display: block;
+      }
+    }
+    .slide-nav {
+      position: relative;
+    }
+    &.centered-without-title {
+      .section-title {
+        margin-top: -88px;
+        @media (max-width: $media-sm) {
+          margin-top: 0;
+        }
+      }
+      .section-wrap {
+        padding-top: 90px !important;
+        padding-bottom: 90px !important;
+        @media (max-width: $media-sm) {
+          padding-top: 50px !important;
+          padding-bottom: 50px !important;
+        }
+      }
+    }
+    .video-background {
+      height: 100%;
+      left: 0;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      
+      .tubular-player {
+        max-width: inherit;
+        position: absolute;
+      }
+      video {
+        max-width: inherit;
+        min-height: 100%;
+        min-width: 100%;
+      }
+    }
+  }
+  .content {
+    &.col-md-offset-1 {
+      margin-right: 8.33333%;
+      @media (max-width: $media-sm) {
+        margin-right: 0;
+      }
+    }
+  }
+  &.left-sidebar {
+    .content {
+      float: right;
+      @media (max-width: $media-xs) {
+        float: none;
+      }
+    }
+  }
+  
+}
+.page-header {
+  margin: 0 0 30px;
+  padding-bottom: 5px;
+  
+  .title:only-child {
+    margin: 0;
+  }
+}
+
+
+
+
+
+
+
+
